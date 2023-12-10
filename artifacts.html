@@ -1,0 +1,177 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Artifacts
+{% endblock %}
+
+{% block main %}
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+
+    <h2 style="margin-top: 120px; text-align: center; margin-left: 20px">
+        Artifacts & Photos
+    </h2>
+
+    <p style="text-align: center">
+        While this site is primarily concerned with the interpersonal conflict between George Reisner and Clarence Fisher, to provide color to the historical events described in other parts of the site, included are artifacts that pertain to Reisner, Fisher, Mahmud, and Said’s careers.
+
+    </p>
+
+
+
+    <div style="height: 100px"></div>
+
+    <div style="margin-bottom: 100px;" class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-slide">
+                <img src="https://www.penn.museum/sites/images/doorjambE17527.gif" alt="Slide 1">
+            </div>
+            <div class="carousel-slide">
+                <img style="width: 400px; height: 300px;" src="https://www.harvardmagazine.com/sites/default/files/inline_images/inline_images/bal_833906.jpg" alt="Slide 2">
+            </div>
+            <div class="carousel-slide">
+                <img style="width: 400px; height: 300px;" src="https://media.pri.org/s3fs-public/images/2019/10/01_kerma_statue_of_lady_sennuwy_emerging.jpg" alt="Slide 3">
+            </div>
+            <div class="carousel-slide">
+                <img style="text-align: center; width: 500px; height: 300px;" src="./static/said.png" alt="Slide 4">
+            </div>
+            <div class="carousel-slide">
+                <img style="text-align: center; width: 240px; height: 300px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Clarence_S._Fisher_LCCN2014716746.jpg/1200px-Clarence_S._Fisher_LCCN2014716746.jpg" alt="Slide 4">
+            </div>
+            <div class="carousel-slide">
+                <img style="text-align: center; width: 230px; height: 300px;" src="https://images.findagrave.com/photos250/photos/2023/7/133066116_37389854-2fff-414b-ba8c-8ba138d14df3.jpeg" alt="Slide 4">
+            </div>
+            <div class="carousel-slide">
+                <img style="text-align: center; width: 400px; height: 300px;" src="https://ka-perseus-images.s3.amazonaws.com/4e98b5234cd57838daefdbf00e3f406d49429b74.jpg" alt="Slide 4">
+            </div>
+            <div class="carousel-slide">
+                <img style="text-align: center; width: 230px; height: 300px;" src="https://collections.mfa.org/internal/media/dispatcher/1030856/preview;jsessionid=02FEAD30C2E9ABDE919CD457BB13B4D2" alt="Slide 4">
+            </div>
+        </div>
+    </div>
+    <script>
+        var carouselInner = document.querySelector(".carousel-inner");
+        var carouselSlides = document.querySelectorAll(".carousel-slide");
+        var slideWidth = carouselSlides[0].offsetWidth;
+        var slideCount = carouselSlides.length;
+        var currentIndex = 0;
+
+        carouselInner.style.width = slideWidth * slideCount + "px";
+
+        function moveSlide(index) {
+            currentIndex = index;
+            carouselInner.style.left = -slideWidth * currentIndex + "px";
+        }
+
+        setInterval(function() {
+            if (currentIndex < slideCount - 1) {
+                moveSlide(currentIndex + 1);
+            } else {
+                moveSlide(0);
+            }
+        }, 3000);
+    </script>
+
+    <h2>
+        Compiled List
+    </h2>
+
+    <table style="margin-top: 50px" class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Date</th>
+                <th style="width: 600px;" scope="col">Description</th>
+                <th scope="col">Photo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>Doorjamb from the palace of Merenptah</td>
+                <td>1213-1203 B.C.E.</td>
+                <td>Clarence Fisher excavated the Merenptah Palace betwee 1914 and 1918.
+                </td>
+                <td><img src="https://www.penn.museum/sites/images/doorjambE17527.gif" alt="Artifact" width="100" height="160"></td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>The chapel of Queen Meresankh III</td>
+                <td>Fourth Dynasty</td>
+                <td>Reisner discovered this tomb in 1927.
+                </td>
+                <td><img src="https://www.harvardmagazine.com/sites/default/files/inline_images/inline_images/bal_833906.jpg" alt="Artifact" width="200" height="160"></td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>Statue of Senuwy, wife of provincial governor of Asyut, Djeifaihapi</td>
+                <td>20 c. B.C.E.</td>
+                <td>This statue was uncovered by Reisner at Kerma in 1913
+                </td>
+                <td><img src="https://media.pri.org/s3fs-public/images/2019/10/01_kerma_statue_of_lady_sennuwy_emerging.jpg" alt="Artifact" width="200" height="160"></td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>Reis (foremen) and brothers Mahmud el-Meyyit (left) and Said Ahmed Said Diraz at Harvard Camp</td>
+                <td>~1908-1926</td>
+                <td>Both Mahmud and Said served as Reis for verious digs.
+                </td>
+                <td><img src="./static/said.png" alt="Artifact" width="350" height="230"></td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>Clarence Stanley Fisher</td>
+                <td>1876-1941</td>
+                <td>Fisher was known to have a stutter which made him hesitant to speak.
+                </td>
+                <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Clarence_S._Fisher_LCCN2014716746.jpg/1200px-Clarence_S._Fisher_LCCN2014716746.jpg" alt="Artifact" width="130" height="160"></td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>George Andrew Reisner Jr.</td>
+                <td>1867-1942</td>
+                <td>Reisner bore a striking resemblance to Theodore Roosevelt.
+                </td>
+                <td><img src="https://images.findagrave.com/photos250/photos/2023/7/133066116_37389854-2fff-414b-ba8c-8ba138d14df3.jpeg" alt="Artifact" width="130" height="160"></td>
+            </tr>
+            <tr>
+                <th scope="row">7</th>
+                <td>The statue of King Menkaure (Mycerinus) and Queen</td>
+                <td>2490–2472 B.C.E.</td>
+                <td>Discovered in Giza in 1910 by George Reisner.
+                </td>
+                <td><img src="https://ka-perseus-images.s3.amazonaws.com/4e98b5234cd57838daefdbf00e3f406d49429b74.jpg" alt="Artifact" width="200" height="200"></td>
+            </tr>
+            <tr>
+                <th scope="row">8</th>
+                <td>Potrait head ("Reserve head")</td>
+                <td>2551–2528 B.C.E.</td>
+                <td>Found in Giza in 1913 by Reisner.
+                </td>
+                <td><img src="https://collections.mfa.org/internal/media/dispatcher/1030856/preview;jsessionid=02FEAD30C2E9ABDE919CD457BB13B4D2" alt="Artifact" width="160" height="200"></td>
+            </tr>
+        </table>
+    </tr>
+    </tbody>
+    </table>
+
+    <div style="height: 100px"></div>
+
+    <div id="footer">
+        <a href="/">Home</a>
+        &nbsp;
+        <a href="/about">About</a>
+        &nbsp;
+        <a href="/timeline">Timeline</a>
+        &nbsp;
+        <a href="/analysis">Analysis</a>
+        &nbsp;
+        <a href="/quiz">QUIZ!</a>
+        &nbsp;
+        <a href="/map">Map</a>
+
+    </div>
+
+{% endblock %}
