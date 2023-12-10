@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+
+    <p style="margin-top: 200px; text-align: center">
+        Please make an account to save your progress on the quiz!
+    </p>
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit" href="/quiz">Log In</button>
+    </form>
+    <br>
+    <p style="text-align: center">
+        If you do not have an account:
+    </p>
+    <a href="/register">
+        <button style="margin-bottom: 170px" class="btn btn-primary">Register</button>
+    </a>
+{% endblock %}

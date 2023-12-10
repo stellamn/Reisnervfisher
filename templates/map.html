@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Map
+{% endblock %}
+
+{% block main %}
+
+    <script>
+        const showImageButton = document.getElementById("show-image-button");
+        const myImage = document.getElementById("my-image");
+        showImageButton.addEventListener("click", () => {
+            alert("HELLO")
+            myImage.style.display = "block";
+        });
+    </script>
+
+    <div style="height: 120px;"></div>
+
+    <div class="background" style="margin-bottom: 40px">
+
+        <h2>
+            MAP
+        </h2>
+
+        <p style="text-align: center">
+            Below is a map of the Harvard-MFA dig sites which constituted the important sites in Reisner and Fisher’s careers.
+        </p>
+
+        <img src="https://www.researchgate.net/profile/Pamela-Hatchfield/publication/272254183/figure/fig3/AS:557774217191425@1509995144491/Map-with-the-excavation-sites-of-the-Harvard-University-Museum-of-Fine-Arts-Expedition.png" style="width: 850px; height: 1000px; margin-bottom: 30px; filter: drop-shadow(0px 0 5px #595959);" alt="Map of Egypt" usemap="#workmap">
+
+
+
+    <div id="footer">
+        <a href="/">Home</a>
+        &nbsp;
+        <a href="/about">About</a>
+        &nbsp;
+        <a href="/artifacts">Artifacts</a>
+        &nbsp;
+        <a href="/analysis">Analysis</a>
+        &nbsp;
+        <a href="/quiz">QUIZ!</a>
+        &nbsp;
+        <a href="/timeline">Timeline</a>
+
+    </div>
+{% endblock %}
