@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Timeline
+{% endblock %}
+
+{% block main %}
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <h2 style="margin-top: 40px">
+        Timeline
+    </h2>
+
+    <p style="text-align: center">
+        Below is a timeline of the crucial events that characterized the Reisner/Fisher conflict. While it is important to get a broad-view perspective of the conflict, if you are interested in learning more about a specific year, input the year in the search bar below and press enter to see more detailed events from a database chronicling letters exchanged from all major players in the conflict. Some particularly rich years are 1917 and 1918 which cover the central years of the conflict.
+    </p>
+
+    <form action="/timeline" method="post">
+        <input style="height: 40px; width: 300px;" autocomplete="off" autofocus name="year" placeholder=" year between 1876 and 1941" type="number">
+        <button class="btn btn-primary" type="submit">search</button>
+    </form>
+
+    <br>
+    <br>
+
+    <form action="/timeline" method="post">
+        <table class="table table-striped">
+            <tr>
+                <th>Date</th>
+                <th>Event</th>
+                <th>Description</th>
+            </tr>
+            {% for thing in things %}
+                <tr>
+                    <td>{{ thing.Date }}</td>
+                    <td>{{ thing.Event }}</td>
+                    <td>{{ thing.Description }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </form>
+
+    <section style="background-color: #F0F2F5; margin-bottom: 30px">
+        <div class="container py-5">
+            <div class="main-timeline">
+                <div class="timeline left">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <h3>Ferbruary 2, 1917</h3>
+                            <p class="mb-0">Fisher writes to Reisner about misunderstandings in the allocation of men. Obvious tension on the subject of employees building.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline right">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <h3>May 14, 1917</h3>
+                            <p class="mb-0">Fisher writes to Reisner and asks him to come to the dahabiyeh “in order to talk over very serious matters.”</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline left">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <h3>June 8, 1917</h3>
+                            <p class="mb-0">Reisner to Fisher with details on how Fisher’s hiring members of the Firnisis family have caused lots of prestige problems at Reisner’s expedition.
+                                Reisner can’t come to town and meet with Fisher because of work but is willing to entertain Fisher at his camp.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline right">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <h3>June 26, 1917</h3>
+                            <p class="mb-0">Apparently unsent letter from Reisner to Gordon detailing the very complex relationships between the working men and the reasons he is unable to dismiss Mahmud.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline left">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <h3>January 9, 1918</h3>
+                            <p class="mb-0">Reisner mails his statement with an explanatory letter to Dr. Gordon at the U. of P. as promised and “I leave the matter to your judgment.”</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline right">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <h3>June 20, 1918</h3>
+                            <p class="mb-0">Reisner writes to Fisher a very polite letter that has nothing to do with their conflict. There will be no more letters on the subject, at least in this file.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer">
+        <a href="/">Home</a>
+        &nbsp;
+        <a href="/about">About</a>
+        &nbsp;
+        <a href="/artifacts">Artifacts</a>
+        &nbsp;
+        <a href="/analysis">Analysis</a>
+        &nbsp;
+        <a href="/quiz">QUIZ!</a>
+        &nbsp;
+        <a href="/map">Map</a>
+
+    </div>
+
+{% endblock %}
